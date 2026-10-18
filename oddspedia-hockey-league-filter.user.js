@@ -59,17 +59,15 @@
   }
 
   function expandFullList() {
-    const list = document.querySelector(".game-list-headline")?.parentElement;
-    if (!list) return;
-    const candidates = [...list.querySelectorAll("*")].filter((control) => {
-      const label = (control.innerText || "").replace(/\s+/g, " ").trim();
-      return /^(?:show more|show all|show full list)$/i.test(label);
-    });
-    for (const control of candidates) {
-      if (candidates.some((child) => child !== control && control.contains(child))) continue;
+    for (const label of document.querySelectorAll(
+      "button.btn-pagination > .btn-pagination__label"
+    )) {
+      const text = (label.textContent || "").replace(/\s+/g, " ").trim();
+      if (!/^show more$/i.test(text)) continue;
+      const control = label.closest("button.btn-pagination");
       if (clickedExpanders.has(control)) continue;
       clickedExpanders.add(control);
-      (control.closest("button, [role='button'], a") || control).click();
+      control.click();
     }
   }
 
