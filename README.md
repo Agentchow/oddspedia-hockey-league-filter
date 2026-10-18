@@ -27,6 +27,6 @@ hides every other competition header and its games.
 - IIHF World Championship
 - Norway 1st Division
 
-The allowlist is `ALLOWED_HEADER_PATTERNS` in the userscript. Matches are
-anchored to the complete Oddspedia card header, so similarly named competitions
-such as DEL 2 and Liiga Women remain hidden.
+The allowlist is `ALLOWED_HEADERS` in the userscript. Matches use the complete
+Oddspedia card header, so similarly named competitions such as DEL 2 and Liiga
+Women remain hidden.
