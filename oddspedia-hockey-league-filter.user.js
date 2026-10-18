@@ -32,7 +32,7 @@
   ];
 
   const HIDDEN = "data-hft-league-hidden";
-  const clickedExpanders = new WeakSet();
+  const expansionAttempts = new WeakMap();
 
   const style = document.createElement("style");
   style.textContent = `[${HIDDEN}]{display:none !important;}`;
@@ -65,9 +65,11 @@
       const text = (label.textContent || "").replace(/\s+/g, " ").trim();
       if (!/^show more$/i.test(text)) continue;
       const control = label.closest("button.btn-pagination");
-      if (clickedExpanders.has(control)) continue;
-      clickedExpanders.add(control);
+      const attempts = expansionAttempts.get(control) || 0;
+      if (attempts >= 20 || control.disabled) continue;
+      expansionAttempts.set(control, attempts + 1);
       control.click();
+      setTimeout(schedule, 250);
     }
   }
 
