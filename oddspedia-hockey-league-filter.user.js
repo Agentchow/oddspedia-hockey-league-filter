@@ -61,12 +61,15 @@
   function expandFullList() {
     const list = document.querySelector(".game-list-headline")?.parentElement;
     if (!list) return;
-    for (const control of list.querySelectorAll("button, [role='button'], a")) {
+    const candidates = [...list.querySelectorAll("*")].filter((control) => {
       const label = (control.innerText || "").replace(/\s+/g, " ").trim();
-      if (!/^(?:show more|show all|show full list)$/i.test(label)) continue;
+      return /^(?:show more|show all|show full list)$/i.test(label);
+    });
+    for (const control of candidates) {
+      if (candidates.some((child) => child !== control && control.contains(child))) continue;
       if (clickedExpanders.has(control)) continue;
       clickedExpanders.add(control);
-      control.click();
+      (control.closest("button, [role='button'], a") || control).click();
     }
   }
 
