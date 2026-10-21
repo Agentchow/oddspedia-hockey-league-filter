@@ -37,8 +37,6 @@
     "europe chl",
     "world world championship",
     "world iihf world championship",
-    "norway 1st division",
-    "norway 1. division",
   ]);
 
   const HIDDEN = "data-oddspedia-league-filter-hidden";
