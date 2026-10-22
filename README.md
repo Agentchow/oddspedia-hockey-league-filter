@@ -25,6 +25,9 @@ hides every other competition header and its games.
 - Swiss NLA / National League
 - Champions Hockey League
 - IIHF World Championship
+- Ligue Magnus
+- Poland Ekstraliga
+- NCAA
 
 The allowlist is `ALLOWED_HEADERS` in the userscript. Matches use the complete
 Oddspedia card header, so similarly named competitions such as DEL 2 and Liiga

@@ -37,6 +37,9 @@
     "europe chl",
     "world world championship",
     "world iihf world championship",
+    "france ligue magnus",
+    "poland ekstraliga",
+    "usa ncaa",
   ]);
 
   const HIDDEN = "data-oddspedia-league-filter-hidden";
@@ -49,6 +52,8 @@
   function normalizedHeader(header) {
     return (header.textContent || "")
       .replace(/\s*-\s*Round\s+\d+\s*$/i, "")
+      .replace(/\s*-\s*play[\s-]?offs\s*$/i, "")
+      .replace(/\s+play[\s-]?offs\s*$/i, "")
       .replace(/\s+/g, " ")
       .trim()
       .toLowerCase();
