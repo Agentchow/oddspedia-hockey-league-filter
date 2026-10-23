@@ -37,7 +37,6 @@
     "europe chl",
     "world world championship",
     "world iihf world championship",
-    "france ligue magnus",
     "poland ekstraliga",
     "usa ncaa",
   ]);
@@ -54,6 +53,7 @@
       .replace(/\s*-\s*Round\s+\d+\s*$/i, "")
       .replace(/\s*-\s*play[\s-]?offs\s*$/i, "")
       .replace(/\s+play[\s-]?offs\s*$/i, "")
+      .replace(/\s*\/\s*/g, " ")
       .replace(/\s+/g, " ")
       .trim()
       .toLowerCase();

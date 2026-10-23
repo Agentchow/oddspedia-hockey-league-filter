@@ -25,7 +25,6 @@ hides every other competition header and its games.
 - Swiss NLA / National League
 - Champions Hockey League
 - IIHF World Championship
-- Ligue Magnus
 - Poland Ekstraliga
 - NCAA
 
