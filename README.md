@@ -21,7 +21,7 @@ hides every other competition header and its games.
 - SHL
 - Liiga
 - DEL
-- Czech Extraliga and Chance Liga
+- Czech Extraliga
 - Swiss NLA / National League
 - Champions Hockey League
 - IIHF World Championship
